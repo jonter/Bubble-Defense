@@ -1,0 +1,20 @@
+Micro Druid
+Generic_____________________
+00) frame 000-009:	BindPose
+01) frame 010-070:	IdleCombat
+02) frame 080-104:	Block
+03) frame 110-130:	GetHitFront 
+04) frame 140-160:	GetHitLeft 
+05) frame 170-190:	GetHitRight
+06) frame 200-230:	Attack 
+07) frame 240-288:	Panic 
+08) frame 290-338:	Die
+09) frame 340-376:	Talk 
+10) frame 380-405: 	Laugh
+11) frame 560-584:	Walk
+
+Custom_____________________
+01) frame 410-434:	CastSpell
+02) frame 440-464:	Scratch
+03) frame 470-500:	MultiScratch
+04) frame 510-558:	SpinSpell
