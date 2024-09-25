@@ -42,15 +42,6 @@ public class Pathfinder : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            bool check = CheckPath();
-            print(check);
-        }
-    }
 
     public List<Waypoint> FindPath()
     {
