@@ -174,8 +174,9 @@ GameObject:
   - component: {fileID: 4032974687629398}
   - component: {fileID: 95251133495186008}
   - component: {fileID: 5133549849972726095}
+  - component: {fileID: 2495669962032593911}
   m_Layer: 0
-  m_Name: micro_demon
+  m_Name: Demon Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,6 +233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  distanceGone: 0
+--- !u!114 &2495669962032593911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134928459341274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69624d96bf5ff7d43b159496ad3e4cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1166949241611488
 GameObject:
   m_ObjectHideFlags: 0

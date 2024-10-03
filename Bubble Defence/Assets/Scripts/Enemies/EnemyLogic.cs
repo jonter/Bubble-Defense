@@ -8,13 +8,18 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] float speed = 1;
     Animator anim;
 
+    [HideInInspector] public float distanceGone = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     public void Go(List<Waypoint> path)
     {
         StartCoroutine(GoCoroutine(path));
@@ -57,6 +62,7 @@ public class EnemyLogic : MonoBehaviour
         while(timer < 1)
         {
             timer += Time.deltaTime * speed;
+            distanceGone += Time.deltaTime * speed;
             transform.position = Vector3.Lerp(start, end, timer);
             yield return null;
         }
