@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hp = 20;
@@ -11,11 +11,14 @@ public class EnemyHealth : MonoBehaviour
 
     public bool GetAlive() { return alive; }
 
+    [SerializeField] Slider healthBar;
 
     public void GetDamage(float damage)
     {
         if (alive == false) return;
         hp -= damage; 
+        healthBar.gameObject.SetActive(true);
+        healthBar.value = hp / maxHp;
         if(hp <= 0.001f)
         {
             Death();
@@ -25,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     void Death()
     {
         alive = false;
+        healthBar.gameObject.SetActive(false);
         GetComponent<Animator>().SetTrigger("death");
         GetComponent<EnemyLogic>().enabled = false;
         Destroy(gameObject, 3);
@@ -35,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         maxHp = hp;
-
+        healthBar.gameObject.SetActive(false);
     }
 
     

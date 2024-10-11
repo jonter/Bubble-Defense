@@ -8,6 +8,8 @@ public class Tower : MonoBehaviour
     [SerializeField] protected float damage = 10;
     [SerializeField] protected float fireRate = 1.5f;
 
+    protected EnemyHealth target;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -33,20 +35,26 @@ public class Tower : MonoBehaviour
 
     }
 
-    protected EnemyLogic FindTargetToShoot()
+    protected EnemyHealth FindTargetToShoot()
     {
         List<EnemyLogic> enemies = FindEnemiesInRadius();
         if (enemies.Count == 0) return null;
 
-        EnemyLogic target = enemies[0];
-        for(int i = 1; i < enemies.Count; i++)
+        EnemyLogic target = null;
+        float max = 0;
+        for(int i = 0; i < enemies.Count; i++)
         {
-            if(target.distanceGone < enemies[i].distanceGone)
+            if (enemies[i].GetComponent<EnemyHealth>().GetAlive() == false)
+                continue;
+            if (enemies[i].distanceGone > max)
             {
                 target = enemies[i];
+                max = enemies[i].distanceGone;
             }
         }
-        return target;
+
+        if (target == null) return null;
+        return target.GetComponent<EnemyHealth>();
     }
 
 }

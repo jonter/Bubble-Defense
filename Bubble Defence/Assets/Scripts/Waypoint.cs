@@ -9,7 +9,6 @@ public class Waypoint : MonoBehaviour
 
     public Waypoint from;
 
-
     public Vector2Int GetGridPos()
     {
         int x = Mathf.RoundToInt(transform.position.x);
