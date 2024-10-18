@@ -9,6 +9,8 @@ public class Waypoint : MonoBehaviour
 
     public Waypoint from;
 
+    [SerializeField] GameObject testTowerPrefab;
+
     public Vector2Int GetGridPos()
     {
         int x = Mathf.RoundToInt(transform.position.x);
@@ -22,5 +24,22 @@ public class Waypoint : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = c;
     }
 
-    
+    public void BuildTower()
+    {
+        busy = true;
+        Pathfinder finder = FindAnyObjectByType<Pathfinder>();
+        bool canPass = finder.CheckPath();
+        if(canPass == true)
+        {
+            Vector3 pos = transform.position + new Vector3(0, 0.5f, 0);
+            Instantiate(testTowerPrefab, pos, Quaternion.identity);
+        }
+        else
+        {
+            busy = false;
+            print("you cannot place here...");
+        }
+    }
+
+ 
 }

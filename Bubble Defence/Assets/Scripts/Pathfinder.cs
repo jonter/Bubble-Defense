@@ -73,6 +73,7 @@ public class Pathfinder : MonoBehaviour
 
     public bool CheckPath()
     {
+        if (startPoint.busy == true) return false;
         isEndFound = false;
         FillGrid();
         search.Clear();
@@ -87,7 +88,6 @@ public class Pathfinder : MonoBehaviour
         }
 
         return isEndFound;
-
     }
 
     void ExploreNear(Waypoint p)

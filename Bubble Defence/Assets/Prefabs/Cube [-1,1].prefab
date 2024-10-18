@@ -303,3 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c1ad00580956b45be6fec9eb723608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  busy: 0
+  explored: 0
+  from: {fileID: 0}
+  testTowerPrefab: {fileID: 6098115014559391749, guid: 8b65e9440821f2147b636260dfc107d8,
+    type: 3}

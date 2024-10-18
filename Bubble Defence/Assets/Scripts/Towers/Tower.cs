@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour
 
     protected EnemyHealth target;
 
+    public Waypoint placePoint;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
