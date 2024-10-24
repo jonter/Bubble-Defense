@@ -12,6 +12,8 @@ public class Tower : MonoBehaviour
 
     public Waypoint placePoint;
 
+    public int price = 10;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

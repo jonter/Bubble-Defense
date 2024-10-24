@@ -184,3 +184,4 @@ MonoBehaviour:
   damage: 10
   fireRate: 1.5
   placePoint: {fileID: 0}
+  price: 25

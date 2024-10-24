@@ -1829,6 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
+  coinsForKill: 3
   healthBar: {fileID: 862113079520814986}
 --- !u!1 &8588502578202768656
 GameObject:

@@ -7,11 +7,9 @@ public class MouseSelector : MonoBehaviour
 {
     Camera mycamera;
 
-    BuildButtons bb;
     // Start is called before the first frame update
     void Start()
     {
-        bb = FindAnyObjectByType<BuildButtons>();
         mycamera = Camera.main;
     }
 
@@ -22,6 +20,7 @@ public class MouseSelector : MonoBehaviour
         {
             MakeRaycast();
         }
+       
         
     }
 
@@ -32,10 +31,19 @@ public class MouseSelector : MonoBehaviour
         Ray r = mycamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
         Physics.Raycast(r, out hitInfo, 1000);
-        if (hitInfo.transform == null) return;
+        if (hitInfo.transform == null)
+        {
+            TowerCreator.instance.HideBuildButtons();
+            return;
+        }
         Waypoint wp = hitInfo.transform.GetComponent<Waypoint>();
-        if(wp == null) return;
-        bb.ShowButtons(wp);
+        if(wp == null)
+        {
+            TowerCreator.instance.HideBuildButtons();
+            return;
+        }
+        TowerCreator.instance.ShowBuildButtons(wp);
         
     }
+
 }

@@ -29,6 +29,12 @@ public class ArcherTower : Tower
             target = null;
             return;
         }
+        float dist = Vector3.Distance(transform.position, target.transform.position);
+        if(dist > attackRadius)
+        {
+            target = null;
+            return;
+        }
 
         archer.Shoot(target, damage, 1/fireRate);
         

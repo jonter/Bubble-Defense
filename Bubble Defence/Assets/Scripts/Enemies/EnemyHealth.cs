@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
 
     bool alive = true;
 
+    [SerializeField] int coinsForKill = 3;
+
     public bool GetAlive() { return alive; }
 
     [SerializeField] Slider healthBar;
@@ -27,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        GameCoins.AddCoins(coinsForKill);
         alive = false;
         healthBar.gameObject.SetActive(false);
         GetComponent<Animator>().SetTrigger("death");
