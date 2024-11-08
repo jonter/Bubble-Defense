@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class TowerCreator : MonoBehaviour
@@ -49,14 +50,47 @@ public class TowerCreator : MonoBehaviour
         return true;
     }
 
-    bool CanSpawn(Waypoint point)
-    { 
-        bool can = true;
-        if (point.busy == true) return false;
-        point.busy = true;
-        if (pathfinder.CheckPath() == false) can = false;
+    bool CheckSpawning()
+    {
+        if (EnemySpawner.Spawning == true)
+        {
+            HintText.Show("Ќельз€ ставить башни, если идет волна", 1);
+            return false;
+        }
+        return true;
+    }
+    bool CheckPointBusy(Waypoint point)
+    {
+        if (point.busy == true)
+        {
+            HintText.Show("Ќа этой точке уже стоит башн€", 1);
+            return false;
+        }
+        return true;
+    }
 
+    bool CheckPathfinder(Waypoint point)
+    {
+        point.busy = true;
+        if (pathfinder.CheckPath() == false)
+        {
+            HintText.Show("Ќельз€ построить башню, если она перегораживает все пути", 2);
+            point.busy = false;
+            return false;
+        }
         point.busy = false;
+        return true;
+    }
+
+    bool CanSpawn(Waypoint point)
+    {
+
+        bool checkSpawn = CheckSpawning();
+        bool checkBusy = CheckPointBusy(point);
+        bool checkPathfinder = CheckPathfinder(point);
+
+        bool can = checkBusy && checkSpawn && checkPathfinder;
+       
         return can;
     }
 
@@ -70,11 +104,8 @@ public class TowerCreator : MonoBehaviour
 
     public void ShowBuildButtons(Waypoint p)
     {
-        if (CanSpawn(p) == false)
-        {
-            HintText.Show("“ы не можешь поставить здесь башню", 1);
-            return;
-        }
+        if (CanSpawn(p) == false) return;
+        
         bb.ShowButtons(p);
     }
 
