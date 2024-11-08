@@ -24,9 +24,16 @@ public class Archer : MonoBehaviour
 
     public void Shoot(EnemyHealth enemy, float damage, float reloadTime)
     {
+        RotateToEnemy(enemy);
         if (isReloaded == false) return;
         currentArrow.Launch(enemy, damage);
         StartCoroutine(ReloadCoroutine(reloadTime));
+    }
+
+    void RotateToEnemy(EnemyHealth enemy)
+    {
+        transform.LookAt(enemy.transform.position);
+        transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
     }
 
     IEnumerator ReloadCoroutine(float reloadTime)

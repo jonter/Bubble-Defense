@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
+using System;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
 
     public static bool Spawning = false;
 
+    public event Action OnStartSpawn;
+    public event Action OnEndSpawn;
+    public event Action OnLevelComplete;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +26,17 @@ public class EnemySpawner : MonoBehaviour
         pathfinder = FindAnyObjectByType<Pathfinder>();
     }
 
-    void Update()
+    public void StartSpawning()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (waveNum > 0) return;
-            StartCoroutine(SpawnNewWave());
-        }
-         
+        if (Spawning == true) return;
+        if (waveNum >= waves.Length) return;
+        StartCoroutine(SpawnNewWave());
+
     }
 
     IEnumerator SpawnNewWave()
     {
+        if(OnStartSpawn != null) OnStartSpawn();
         Spawning = true;
         Wave current = waves[waveNum];
         Vector3 pos = transform.position + new Vector3(0, 0.3f, 0);
@@ -58,11 +61,14 @@ public class EnemySpawner : MonoBehaviour
         if(waveNum >= waves.Length)
         {
             print("Ты прошел уровень");
+            if(OnLevelComplete != null) OnLevelComplete();
         }
         else
         {
             display.SetBuild("Строим", timeBetweenWaves);
+            if(OnEndSpawn != null) OnEndSpawn();
             yield return new WaitForSeconds(timeBetweenWaves);
+            if (Spawning == true) yield break; 
             StartCoroutine(SpawnNewWave());
         }
     }

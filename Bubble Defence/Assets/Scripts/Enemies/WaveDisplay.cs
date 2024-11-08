@@ -9,12 +9,20 @@ public class WaveDisplay : MonoBehaviour
 {
     Slider slider;
     TMP_Text infoText;
+    Button activateButton;
     // Start is called before the first frame update
     void Start()
     {
+        activateButton = GetComponentInChildren<Button>();
         slider = GetComponent<Slider>();
         infoText = GetComponentInChildren<TMP_Text>();
         infoText.text = "Начать";
+        activateButton.onClick.AddListener(StartSpawning);  
+    }
+
+    void StartSpawning()
+    {
+        FindAnyObjectByType<EnemySpawner>().StartSpawning();
     }
 
     public void SetWave(string str, float duration)

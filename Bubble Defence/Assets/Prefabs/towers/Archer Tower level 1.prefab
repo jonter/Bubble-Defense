@@ -100,6 +100,8 @@ MonoBehaviour:
   attackRadius: 2
   damage: 2
   fireRate: 2
+  placePoint: {fileID: 0}
+  price: 10
 --- !u!1 &8392856303847091995
 GameObject:
   m_ObjectHideFlags: 0

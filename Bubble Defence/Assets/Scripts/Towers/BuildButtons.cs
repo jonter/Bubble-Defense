@@ -29,6 +29,8 @@ public class BuildButtons : MonoBehaviour
         archerButton.transform.localScale = new Vector3(0, 0, 0);
         magicButton.transform.localScale = new Vector3(0, 0, 0);
         canonButton.transform.localScale = new Vector3(0, 0, 0);
+
+        FindAnyObjectByType<EnemySpawner>().OnStartSpawn += HideButtons;
     }
 
     public void ShowButtons(Waypoint point)

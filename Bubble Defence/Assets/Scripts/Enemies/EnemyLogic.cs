@@ -9,6 +9,12 @@ public class EnemyLogic : MonoBehaviour
     Animator anim;
 
     [HideInInspector] public float distanceGone = 0;
+    [SerializeField] float damage = 10;
+
+    public void Attack()
+    {
+        FindAnyObjectByType<Castle>().GetDamage(damage);
+    }
 
     // Start is called before the first frame update
     void Start()
