@@ -14,6 +14,33 @@ public class Tower : MonoBehaviour
 
     public int price = 10;
 
+    protected bool isReady = false;
+    MeshFilter filter;
+    [SerializeField] protected Mesh buildingMesh;
+    [SerializeField] protected Mesh readyMesh;
+    [SerializeField] protected ParticleSystem buildVFX;
+
+    protected virtual IEnumerator Start()
+    {
+        filter = GetComponent<MeshFilter>();
+        filter.mesh = buildingMesh;
+        buildVFX.Play();
+        isReady = false;
+        yield return new WaitForSeconds(2);
+        filter.mesh = readyMesh;
+        isReady = true;
+        buildVFX.Stop();
+        StartCoroutine(ScanEnemyCoroutine());
+    }
+
+    protected IEnumerator ScanEnemyCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (target == null) target = FindTargetToShoot();
+
+        StartCoroutine(ScanEnemyCoroutine());
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

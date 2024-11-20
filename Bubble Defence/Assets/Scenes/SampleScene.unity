@@ -5441,7 +5441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031e308ef932d7c44842c82aef407713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: -3703284216460755233, guid: 6b7a23871cd2ee842841b3389e2208c4,
+  towerPrefab: {fileID: 6881559424618881658, guid: 28c1b785ba7d58a41969448e0cee840e,
     type: 3}
 --- !u!1 &1653151932
 GameObject:
@@ -6115,7 +6115,7 @@ MonoBehaviour:
     type: 3}
   magicTowerPrefab: {fileID: 1367997974350908, guid: be0b768028397264d9c378dbd4f93277,
     type: 3}
-  canonTowerPrefab: {fileID: 1473710097402076, guid: 6b7a23871cd2ee842841b3389e2208c4,
+  canonTowerPrefab: {fileID: 765886615855062494, guid: 28c1b785ba7d58a41969448e0cee840e,
     type: 3}
 --- !u!4 &1906663623
 Transform:

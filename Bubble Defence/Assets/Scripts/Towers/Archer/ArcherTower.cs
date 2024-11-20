@@ -6,23 +6,21 @@ public class ArcherTower : Tower
 {
     Archer archer;
     // Start is called before the first frame update
-    void Start()
+
+    protected override IEnumerator Start()
     {
         archer = GetComponentInChildren<Archer>();
-        StartCoroutine(ScanEnemyCoroutine());
+        archer.gameObject.SetActive(false);
+        yield return StartCoroutine(base.Start());
+        archer.gameObject.SetActive(true);
     }
 
-    IEnumerator ScanEnemyCoroutine()
-    {
-        yield return new WaitForSeconds(0.2f);
-        if(target == null) target = FindTargetToShoot();
-        
-        StartCoroutine(ScanEnemyCoroutine());
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        if (isReady == false) return;
         if (target == null) return;
         if (target.GetAlive() == false)
         {
