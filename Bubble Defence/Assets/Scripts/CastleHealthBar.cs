@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CastleHealthBar : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class CastleHealthBar : MonoBehaviour
 
     void DisplayHealth(float percent)
     {
-        myslider.value = percent;
+        myslider.DOKill();
+        myslider.DOValue(percent, 0.15f).SetEase(Ease.InOutCubic);
+
         if(percent < 0.001f)
         {
             icon.sprite = destroyedCastle;

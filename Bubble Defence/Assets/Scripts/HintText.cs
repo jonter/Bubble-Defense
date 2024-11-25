@@ -24,7 +24,7 @@ public class HintText : MonoBehaviour
         rect.DOKill();
         mytext.text = str;
         rect.anchoredPosition = new Vector2(0, -150);
-        rect.DOAnchorPos(new Vector2(0, 150), animTime).SetEase(Ease.OutElastic);
+        rect.DOAnchorPos(new Vector2(0, 250), animTime).SetEase(Ease.OutElastic);
 
         rect.DOAnchorPos(new Vector2(0, -150), animTime).SetDelay(duration);
     }

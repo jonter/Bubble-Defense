@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031e308ef932d7c44842c82aef407713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7399809636886267868, guid: be0b768028397264d9c378dbd4f93277,
+  towerPrefab: {fileID: 3467071086610191683, guid: f9f2c2808ffa4dc4a9b53895e88b0855,
     type: 3}
 --- !u!1001 &442061067
 PrefabInstance:
@@ -4968,7 +4968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6113,7 +6113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archerTowerPrefab: {fileID: 6098115014559391749, guid: 8b65e9440821f2147b636260dfc107d8,
     type: 3}
-  magicTowerPrefab: {fileID: 1367997974350908, guid: be0b768028397264d9c378dbd4f93277,
+  magicTowerPrefab: {fileID: 653133877890163765, guid: f9f2c2808ffa4dc4a9b53895e88b0855,
     type: 3}
   canonTowerPrefab: {fileID: 765886615855062494, guid: 28c1b785ba7d58a41969448e0cee840e,
     type: 3}
@@ -6549,8 +6549,8 @@ RectTransform:
   - {fileID: 105403484}
   - {fileID: 1777118524}
   - {fileID: 936382271}
-  - {fileID: 1483493156}
   - {fileID: 2044241972}
+  - {fileID: 1483493156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

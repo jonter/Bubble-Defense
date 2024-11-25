@@ -21,19 +21,7 @@ public class CanonTower : Tower
     void Update()
     {
         if (reloaded == false) return;
-        if (isReady == false) return;
-        if (target == null) return;
-        if (target.GetAlive() == false)
-        {
-            target = null;
-            return;
-        }
-        float dist = Vector3.Distance(transform.position, target.transform.position);
-        if (dist > attackRadius)
-        {
-            target = null;
-            return;
-        }
+        if(CanShoot() == false) return;
 
         StartCoroutine(ShootCoroutine());
     }

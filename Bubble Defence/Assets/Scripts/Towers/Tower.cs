@@ -88,4 +88,23 @@ public class Tower : MonoBehaviour
         return target.GetComponent<EnemyHealth>();
     }
 
+
+    protected bool CanShoot()
+    {
+        if (isReady == false) return false;
+        if (target == null) return false;
+        if (target.GetAlive() == false)
+        {
+            target = null;
+            return false;
+        }
+        float dist = Vector3.Distance(transform.position, target.transform.position);
+        if (dist > attackRadius)
+        {
+            target = null;
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -20,19 +20,7 @@ public class ArcherTower : Tower
     // Update is called once per frame
     void Update()
     {
-        if (isReady == false) return;
-        if (target == null) return;
-        if (target.GetAlive() == false)
-        {
-            target = null;
-            return;
-        }
-        float dist = Vector3.Distance(transform.position, target.transform.position);
-        if(dist > attackRadius)
-        {
-            target = null;
-            return;
-        }
+        if (CanShoot() == false) return;
 
         archer.Shoot(target, damage, 1/fireRate);
         

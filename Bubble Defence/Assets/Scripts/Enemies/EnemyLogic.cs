@@ -11,6 +11,18 @@ public class EnemyLogic : MonoBehaviour
     [HideInInspector] public float distanceGone = 0;
     [SerializeField] float damage = 10;
 
+    public void Slow(float slowness, float duration)
+    {
+        StartCoroutine(SlowCoroutine(slowness, duration));
+    }
+
+    IEnumerator SlowCoroutine(float slowness, float duration)
+    {
+        speed /= slowness;
+        yield return new WaitForSeconds(duration);
+        speed *= slowness;
+    }
+
     public void Attack()
     {
         FindAnyObjectByType<Castle>().GetDamage(damage);
