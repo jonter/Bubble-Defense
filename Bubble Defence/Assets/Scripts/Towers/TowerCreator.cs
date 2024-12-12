@@ -85,13 +85,11 @@ public class TowerCreator : MonoBehaviour
     bool CanSpawn(Waypoint point)
     {
 
-        bool checkSpawn = CheckSpawning();
-        bool checkBusy = CheckPointBusy(point);
-        bool checkPathfinder = CheckPathfinder(point);
+        if (CheckSpawning() == false) return false;
+        if (CheckPointBusy(point) == false) return false;
+        if (CheckPathfinder(point) == false) return false;
 
-        bool can = checkBusy && checkSpawn && checkPathfinder;
-       
-        return can;
+        return true;
     }
 
     // Start is called before the first frame update

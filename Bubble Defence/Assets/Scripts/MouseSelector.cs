@@ -34,16 +34,18 @@ public class MouseSelector : MonoBehaviour
         if (hitInfo.transform == null)
         {
             TowerCreator.instance.HideBuildButtons();
+            TowerUpgrade.instance.Deselect();
             return;
         }
-        Waypoint wp = hitInfo.transform.GetComponent<Waypoint>();
-        if(wp == null)
-        {
-            TowerCreator.instance.HideBuildButtons();
-            return;
-        }
-        TowerCreator.instance.ShowBuildButtons(wp);
         
+        Waypoint wp = hitInfo.transform.GetComponent<Waypoint>();
+        if(wp == null) TowerCreator.instance.HideBuildButtons();
+        else TowerCreator.instance.ShowBuildButtons(wp);
+
+        Tower t = hitInfo.transform.GetComponent<Tower>();
+        if (t == null) TowerUpgrade.instance.Deselect();
+        else TowerUpgrade.instance.Select(t);
+
     }
 
 }

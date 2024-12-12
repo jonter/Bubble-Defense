@@ -15,7 +15,13 @@ public class ArcherTower : Tower
         archer.gameObject.SetActive(true);
     }
 
-    
+    public override void SellTower()
+    {
+        archer.gameObject.SetActive(false);
+        base.SellTower();
+    }
+
+
 
     // Update is called once per frame
     void Update()

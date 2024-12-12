@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+
 public class CanonTower : Tower
 {
     [SerializeField] GameObject topPart;
@@ -17,6 +18,11 @@ public class CanonTower : Tower
         topPart.SetActive(true);
     }
 
+    private void OnDisable()
+    {
+        topPart.transform.DOKill();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +31,14 @@ public class CanonTower : Tower
 
         StartCoroutine(ShootCoroutine());
     }
+
+    public override void SellTower()
+    {
+        topPart.SetActive(false);
+        base.SellTower();
+    }
+
+
 
     IEnumerator ShootCoroutine()
     {

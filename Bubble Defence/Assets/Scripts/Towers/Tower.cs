@@ -20,6 +20,8 @@ public class Tower : MonoBehaviour
     [SerializeField] protected Mesh readyMesh;
     [SerializeField] protected ParticleSystem buildVFX;
 
+    public Tower upgradedTower;
+
     protected virtual IEnumerator Start()
     {
         filter = GetComponent<MeshFilter>();
@@ -33,10 +35,36 @@ public class Tower : MonoBehaviour
         StartCoroutine(ScanEnemyCoroutine());
     }
 
+
+    public virtual void SellTower()
+    {
+        StartCoroutine(SellCoroutine());
+    }
+
+    IEnumerator SellCoroutine()
+    {
+        GetComponent<Collider>().enabled = false;
+        buildVFX.Play();
+        filter.mesh = buildingMesh;
+        isReady = false;
+        GameCoins.AddCoins(price);
+        yield return new WaitForSeconds(2);
+        placePoint.busy = false;
+        Destroy(gameObject);
+    }
+
+    public void Upgrade()
+    {
+        GameObject newTower = Instantiate(upgradedTower.gameObject);
+        newTower.transform.position = transform.position;
+        newTower.GetComponent<Tower>().placePoint = placePoint;
+        Destroy(gameObject);
+    }
+
     protected IEnumerator ScanEnemyCoroutine()
     {
         yield return new WaitForSeconds(0.2f);
-        if (target == null) target = FindTargetToShoot();
+        target = FindTargetToShoot();
 
         StartCoroutine(ScanEnemyCoroutine());
     }

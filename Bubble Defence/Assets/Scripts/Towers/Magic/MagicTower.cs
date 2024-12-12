@@ -22,6 +22,17 @@ public class MagicTower : Tower
         AnimCrystal();
     }
 
+    public override void SellTower()
+    {
+        topCrystal.SetActive(false);
+        base.SellTower();
+    }
+
+    private void OnDisable()
+    {
+        topCrystal.transform.DOKill();
+    }
+
     void AnimCrystal()
     {
         Vector3 rot = new Vector3(0, 360, 0);
