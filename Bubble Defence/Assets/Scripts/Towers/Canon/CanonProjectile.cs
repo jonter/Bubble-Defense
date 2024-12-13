@@ -7,7 +7,7 @@ public class CanonProjectile : MonoBehaviour
 {
     [SerializeField] float flyTime = 1;
     [SerializeField] float height = 5;
-    bool launched = false;
+    protected bool launched = false;
     float damage;
     float radius;
 
@@ -49,13 +49,4 @@ public class CanonProjectile : MonoBehaviour
 
     
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            Vector3 coord = new Vector3(-1, 1, 1);
-            Launch(coord, 100, 1);
-        }
-    }
 }

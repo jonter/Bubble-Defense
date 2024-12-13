@@ -22,6 +22,9 @@ public class Tower : MonoBehaviour
 
     public Tower upgradedTower;
 
+    [Tooltip("Вставить сюда еще башню, если мы можем прокачаться в другой тип башен")]
+    public Tower extraUpgradeTower;
+
     protected virtual IEnumerator Start()
     {
         filter = GetComponent<MeshFilter>();
@@ -34,6 +37,8 @@ public class Tower : MonoBehaviour
         buildVFX.Stop();
         StartCoroutine(ScanEnemyCoroutine());
     }
+
+    public bool GetIsReady() { return isReady; }
 
 
     public virtual void SellTower()
@@ -56,6 +61,14 @@ public class Tower : MonoBehaviour
     public void Upgrade()
     {
         GameObject newTower = Instantiate(upgradedTower.gameObject);
+        newTower.transform.position = transform.position;
+        newTower.GetComponent<Tower>().placePoint = placePoint;
+        Destroy(gameObject);
+    }
+
+    public void ExtraUpgrade()
+    {
+        GameObject newTower = Instantiate(extraUpgradeTower.gameObject);
         newTower.transform.position = transform.position;
         newTower.GetComponent<Tower>().placePoint = placePoint;
         Destroy(gameObject);

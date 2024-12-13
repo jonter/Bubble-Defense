@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7560601795582705564}
   - component: {fileID: 2279088081700489506}
   m_Layer: 0
-  m_Name: Archer Tower level 2
+  m_Name: Archer Tower level 4B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6098115014559391749}
-  m_Mesh: {fileID: 4300000, guid: 994adfa9dfe55f249a376f7cd9cdaa6c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 28f528ecfe682dc45aad11043b368dfa, type: 3}
 --- !u!23 &9042697239854818144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -100,15 +100,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2.2
-  damage: 5
+  damage: 10
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 30
-  buildingMesh: {fileID: 4300000, guid: 02c5c88f348e9ec40bc9f75b4607bd6c, type: 3}
-  readyMesh: {fileID: 4300000, guid: 994adfa9dfe55f249a376f7cd9cdaa6c, type: 3}
+  price: 250
+  buildingMesh: {fileID: 4300000, guid: 64b0502d91761814b93e8a024126bc0e, type: 3}
+  readyMesh: {fileID: 4300000, guid: 28f528ecfe682dc45aad11043b368dfa, type: 3}
   buildVFX: {fileID: 5349529255792655070}
-  upgradedTower: {fileID: 7560601795582705564, guid: 76a47dc603bd7124498df26cd11cb385,
-    type: 3}
+  upgradedTower: {fileID: 0}
+  extraUpgradeTower: {fileID: 0}
 --- !u!65 &2279088081700489506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -156,9 +156,9 @@ Transform:
   m_GameObject: {fileID: 8392856303847091995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 6.34, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1160058695973057586}
   - {fileID: 4435504756066777563}
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
@@ -240,6 +240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200467072403155044, guid: be041776e1dd788419cd0af41a8109fe,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

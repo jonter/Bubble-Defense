@@ -19,11 +19,30 @@ public class TowerUpgrade : MonoBehaviour
 
     public void Select(Tower t)
     {
+        if(t.GetIsReady() == false)
+        {
+            HintText.Show("Пока башня строится ты не можешь её менять");
+            return;
+        }
         selectedTower = t;
-        int upgradePrice = t.upgradedTower.price;
-        int sellPrice = t.price;
-
-        upgradeButtons.ShowButtons(t, upgradePrice, sellPrice);
+        if(t.upgradedTower == null)
+        {
+            int sellPrice = t.price;
+            upgradeButtons.ShowDestroyButton(t, sellPrice);
+        }
+        else if(t.extraUpgradeTower == null)
+        {
+            int upgradePrice = t.upgradedTower.price;
+            int sellPrice = t.price;
+            upgradeButtons.ShowButtons(t, upgradePrice, sellPrice);
+        }
+        else
+        {
+            int upgradePriceA = t.upgradedTower.price;
+            int upgradePriceB = t.extraUpgradeTower.price;
+            int sellPrice = t.price;
+            upgradeButtons.ShowExtraButtons(t, upgradePriceA, upgradePriceB, sellPrice);
+        }
     }
 
     public void Deselect()
@@ -43,6 +62,22 @@ public class TowerUpgrade : MonoBehaviour
         else
         {
             selectedTower.Upgrade();
+            selectedTower = null;
+        }
+        upgradeButtons.HideButtons();
+    }
+
+    public void ExtraUpgrade()
+    {
+        if (selectedTower == null) return;
+        int upgradePrice = selectedTower.extraUpgradeTower.price;
+        if (GameCoins.SpendCoins(upgradePrice) == false)
+        {
+            HintText.Show("Недостаточно денег для прокачки", 1.5f);
+        }
+        else
+        {
+            selectedTower.ExtraUpgrade();
             selectedTower = null;
         }
         upgradeButtons.HideButtons();

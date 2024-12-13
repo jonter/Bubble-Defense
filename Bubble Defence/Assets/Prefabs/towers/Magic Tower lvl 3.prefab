@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3467071086610191683}
   - component: {fileID: 3994460002642664276}
   m_Layer: 0
-  m_Name: Magic Tower lvl 2
+  m_Name: Magic Tower lvl 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653133877890163765}
-  m_Mesh: {fileID: 4300000, guid: 2bc0dcbde9d106840bcdedaa3c8189ca, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8a5afb059ccf78d4599033a4c1421d72, type: 3}
 --- !u!23 &1959224443695511196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,19 +101,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2051d1fc512228f498f7856fbc45566d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 1.8
-  damage: 2
+  attackRadius: 2
+  damage: 4
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 25
+  price: 70
   buildingMesh: {fileID: 4300000, guid: 602854b273226184ab6435f33cd67373, type: 3}
   readyMesh: {fileID: 4300000, guid: 2bc0dcbde9d106840bcdedaa3c8189ca, type: 3}
   buildVFX: {fileID: 7457686407550095889}
-  upgradedTower: {fileID: 3467071086610191683, guid: 76cd29b000ef9a04fb62bc8aa08be705,
-    type: 3}
+  upgradedTower: {fileID: 0}
   topCrystal: {fileID: 3440927816283844012}
   frostVFX: {fileID: 2254537936824190953}
-  slowness: 1.7
+  slowness: 2
   slowDuration: 1
 --- !u!65 &3994460002642664276
 BoxCollider:
@@ -215,7 +214,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.06
+    widthMultiplier: 0.07
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -5203,7 +5202,7 @@ Transform:
   m_GameObject: {fileID: 3440927816283844012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9, z: 0.000011444092}
+  m_LocalPosition: {x: 0, y: 9.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5216,7 +5215,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3440927816283844012}
-  m_Mesh: {fileID: 4300002, guid: 2bc0dcbde9d106840bcdedaa3c8189ca, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 8a5afb059ccf78d4599033a4c1421d72, type: 3}
 --- !u!23 &8302264358831870467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5280,7 +5279,7 @@ PrefabInstance:
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
