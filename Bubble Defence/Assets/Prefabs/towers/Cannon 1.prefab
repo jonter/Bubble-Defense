@@ -4984,7 +4984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyTime: 0.8
-  height: 2
+  height: 2.2
 --- !u!1 &7101406207850529788
 GameObject:
   m_ObjectHideFlags: 0

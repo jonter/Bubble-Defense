@@ -5,12 +5,12 @@ using DG.Tweening;
 
 public class MagicTower : Tower
 {
-    [SerializeField] GameObject topCrystal;
-    LineRenderer shootLine;
-    [SerializeField] ParticleSystem frostVFX;
-    [SerializeField] float slowness = 2;
-    [SerializeField] float slowDuration = 1;
-    bool reloaded = true;
+    [SerializeField] protected GameObject topCrystal;
+    protected LineRenderer shootLine;
+    [SerializeField] protected ParticleSystem frostVFX;
+    [SerializeField] protected float slowness = 2;
+    [SerializeField] protected float slowDuration = 1;
+    protected bool reloaded = true;
 
     protected override IEnumerator Start()
     {
@@ -54,7 +54,7 @@ public class MagicTower : Tower
         StartCoroutine(ShootCoroutine());
     }
 
-    IEnumerator ShootCoroutine()
+    protected virtual IEnumerator ShootCoroutine()
     {
         reloaded = false;
         target.GetDamage(damage);

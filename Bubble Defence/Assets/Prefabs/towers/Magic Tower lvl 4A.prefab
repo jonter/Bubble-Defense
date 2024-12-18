@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3467071086610191683}
   - component: {fileID: 3994460002642664276}
   m_Layer: 0
-  m_Name: Magic Tower lvl 3
+  m_Name: Magic Tower lvl 4A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653133877890163765}
-  m_Mesh: {fileID: 4300000, guid: 8a5afb059ccf78d4599033a4c1421d72, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8e2a23ab44bdd874ab659cd16dc31e1b, type: 3}
 --- !u!23 &1959224443695511196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,21 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2051d1fc512228f498f7856fbc45566d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 2
-  damage: 4
+  attackRadius: 2.2
+  damage: 5
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 70
-  buildingMesh: {fileID: 4300000, guid: 602854b273226184ab6435f33cd67373, type: 3}
-  readyMesh: {fileID: 4300000, guid: 2bc0dcbde9d106840bcdedaa3c8189ca, type: 3}
+  price: 160
+  buildingMesh: {fileID: 4300000, guid: c5ddf8c5ef1825f4194f804874982330, type: 3}
+  readyMesh: {fileID: 4300000, guid: 8e2a23ab44bdd874ab659cd16dc31e1b, type: 3}
   buildVFX: {fileID: 7457686407550095889}
-  upgradedTower: {fileID: 3467071086610191683, guid: d2f7629acf311b144b7dec9f164c691d,
-    type: 3}
-  extraUpgradeTower: {fileID: 1208010467438093717, guid: 28192497fc9c7c94f9fe65752c6982cf,
-    type: 3}
+  upgradedTower: {fileID: 0}
+  extraUpgradeTower: {fileID: 0}
   topCrystal: {fileID: 3440927816283844012}
   frostVFX: {fileID: 2254537936824190953}
-  slowness: 2
+  slowness: 3
   slowDuration: 1
 --- !u!65 &3994460002642664276
 BoxCollider:
@@ -217,7 +215,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.07
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -244,8 +242,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.47641608, b: 0.9433962, a: 1}
-      key1: {r: 0, g: 0.9702921, b: 1, a: 1}
+      key0: {r: 0.9960785, g: 0.58431375, b: 0.3372549, a: 1}
+      key1: {r: 0.92116606, g: 0.9716981, b: 0.2970096, a: 1}
       key2: {r: 0, g: 0.32370806, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -505,7 +503,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.22605905, g: 0.697026, b: 0.9433962, a: 1}
+      minColor: {r: 0.9960785, g: 0.5882353, b: 0.3372549, a: 1}
       maxColor: {r: 0.855251, g: 0.9811321, b: 0.97096926, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -570,8 +568,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.1
+      scalar: 0.25
+      minScalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5205,7 +5203,7 @@ Transform:
   m_GameObject: {fileID: 3440927816283844012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: 0}
+  m_LocalPosition: {x: 0, y: 11.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5218,7 +5216,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3440927816283844012}
-  m_Mesh: {fileID: 4300002, guid: 8a5afb059ccf78d4599033a4c1421d72, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 8e2a23ab44bdd874ab659cd16dc31e1b, type: 3}
 --- !u!23 &8302264358831870467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5282,7 +5280,7 @@ PrefabInstance:
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.78
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
@@ -5323,6 +5321,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200467072403155044, guid: be041776e1dd788419cd0af41a8109fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.47305092
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200467072403155044, guid: be041776e1dd788419cd0af41a8109fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.6625164
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200467072403155044, guid: be041776e1dd788419cd0af41a8109fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.8301887
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -23,7 +23,9 @@ public class Wave : ScriptableObject
         {
             GameObject clone = 
                 Instantiate(enemyPrefabs[i], origin, Quaternion.identity);
-            // увеличить жизни врагу и монеты за убийство
+            EnemyHealth eh = clone.GetComponent<EnemyHealth>();
+            eh.IncreaseHP(hpMult);
+            eh.IncreaseCoins(coinsMult);
             EnemyLogic el = clone.GetComponent<EnemyLogic>();
             el.Go(points);
             yield return new WaitForSeconds(timeBetween);

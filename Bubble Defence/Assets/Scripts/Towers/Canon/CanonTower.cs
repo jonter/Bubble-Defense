@@ -48,7 +48,8 @@ public class CanonTower : Tower
         proj.GetComponent<CanonProjectile>()
             .Launch(target.transform.position, damage, burstRadius);
         float delay = 1 / fireRate;
-        topPart.transform.DOLocalMoveY(2.5f, delay / 3).SetEase(Ease.OutQuad)
+        float h = topPart.transform.localPosition.y - 1;
+        topPart.transform.DOLocalMoveY(h, delay / 4).SetEase(Ease.OutQuad)
             .SetLoops(2, LoopType.Yoyo);
         yield return new WaitForSeconds(delay);
         reloaded = true;

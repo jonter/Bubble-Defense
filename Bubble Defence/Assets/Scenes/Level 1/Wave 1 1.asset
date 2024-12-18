@@ -16,6 +16,9 @@ MonoBehaviour:
   - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
   - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
   - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
-  timeBetween: 1.5
-  hpMult: 1
+  - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
+  - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
+  - {fileID: 8354751440100518134, guid: 81f62266dd58cad49b837f04df924cf1, type: 3}
+  timeBetween: 1.2
+  hpMult: 2
   coinsMult: 1

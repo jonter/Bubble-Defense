@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6881559424618881658}
   - component: {fileID: 2936322673136642863}
   m_Layer: 0
-  m_Name: Canon Tower lvl 3
+  m_Name: Canon Tower lvl 4B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765886615855062494}
-  m_Mesh: {fileID: 4300000, guid: 624b1250df12eab4789dd19d1ff90f7d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 9122dba3367b07b47a9a6145ea9fa5be, type: 3}
 --- !u!23 &5394086986867445008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99,22 +99,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5238318af8f7a74dbbc2e33ea3dfbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 2.3
-  damage: 40
-  fireRate: 1
+  attackRadius: 2.6
+  damage: 70
+  fireRate: 0.8
   placePoint: {fileID: 0}
-  price: 150
-  buildingMesh: {fileID: 4300000, guid: c27b8f79ee0d5a042b6096cf36bf371f, type: 3}
-  readyMesh: {fileID: 4300000, guid: 257f854f145db2b4ebe40ddfa20f5024, type: 3}
+  price: 400
+  buildingMesh: {fileID: 4300000, guid: 4fb286f502c4d194ba7ca3e1256f2a6b, type: 3}
+  readyMesh: {fileID: 4300000, guid: 9122dba3367b07b47a9a6145ea9fa5be, type: 3}
   buildVFX: {fileID: 8447511105964324313}
-  upgradedTower: {fileID: 6881559424618881658, guid: 648bacb1f21825647b1a76391b215c8a,
-    type: 3}
-  extraUpgradeTower: {fileID: 6881559424618881658, guid: eab49b33c2f045546b65dbafbde39290,
-    type: 3}
+  upgradedTower: {fileID: 0}
+  extraUpgradeTower: {fileID: 0}
   topPart: {fileID: 4235210739505419775}
-  projectilePrefab: {fileID: 2574839465511460688, guid: dcd746fd83ecaed4b84b93a11b883503,
+  projectilePrefab: {fileID: 2574839465511460688, guid: 59e6bab5798d6414ba2a30b751acbff8,
     type: 3}
-  burstRadius: 1.2
+  burstRadius: 1.6
 --- !u!65 &2936322673136642863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -163,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 4235210739505419775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0842022e-19, y: 3.47, z: 0.0000071525574}
+  m_LocalPosition: {x: -1.0842022e-19, y: 4.1, z: 0.0000071525574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,7 +174,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4235210739505419775}
-  m_Mesh: {fileID: 4300002, guid: 624b1250df12eab4789dd19d1ff90f7d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 9122dba3367b07b47a9a6145ea9fa5be, type: 3}
 --- !u!23 &8022798267748284134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -240,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 5.09
       objectReference: {fileID: 0}
     - target: {fileID: 2869936851715477529, guid: be041776e1dd788419cd0af41a8109fe,
         type: 3}

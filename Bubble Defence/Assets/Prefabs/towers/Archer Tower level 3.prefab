@@ -107,9 +107,9 @@ MonoBehaviour:
   buildingMesh: {fileID: 4300000, guid: 9f6f07a475fa44345b665fc56302aa27, type: 3}
   readyMesh: {fileID: 4300000, guid: bc4bf5978b0527b488b736a0812f1a0d, type: 3}
   buildVFX: {fileID: 5349529255792655070}
-  upgradedTower: {fileID: 7560601795582705564, guid: 1474a7b3fa0ae3b4eb0acc0188b1239e,
+  upgradedTower: {fileID: 5733255783731526918, guid: 1474a7b3fa0ae3b4eb0acc0188b1239e,
     type: 3}
-  extraUpgradeTower: {fileID: 7560601795582705564, guid: 58b0ed0899b914349bd0e27c2b861396,
+  extraUpgradeTower: {fileID: 5792430369898204534, guid: 58b0ed0899b914349bd0e27c2b861396,
     type: 3}
 --- !u!65 &2279088081700489506
 BoxCollider:

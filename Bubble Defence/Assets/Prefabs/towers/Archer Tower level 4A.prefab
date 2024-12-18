@@ -59,8 +59,8 @@ GameObject:
   - component: {fileID: 2709435860679690652}
   - component: {fileID: 3723487763387972572}
   - component: {fileID: 9042697239854818144}
-  - component: {fileID: 7560601795582705564}
   - component: {fileID: 2279088081700489506}
+  - component: {fileID: 5733255783731526918}
   m_Layer: 0
   m_Name: Archer Tower level 4A
   m_TagString: Untagged
@@ -136,28 +136,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7560601795582705564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6098115014559391749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcac4231c445fcf46b0eeb77e8ec62da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRadius: 2.8
-  damage: 10
-  fireRate: 2.5
-  placePoint: {fileID: 0}
-  price: 220
-  buildingMesh: {fileID: 4300000, guid: 55e7e671a36fffb48b4218ed49b70d0b, type: 3}
-  readyMesh: {fileID: 4300000, guid: 00508f8ccaa61a54890e091bece3fbf0, type: 3}
-  buildVFX: {fileID: 5349529255792655070}
-  upgradedTower: {fileID: 0}
-  extraUpgradeTower: {fileID: 0}
 --- !u!65 &2279088081700489506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -179,6 +157,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.4848943, y: 6.3971224, z: 6.756499}
   m_Center: {x: -0.00000059604645, y: 3.1786828, z: -0.13579667}
+--- !u!114 &5733255783731526918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098115014559391749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d60c261f83d946449a820aded40744c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRadius: 3
+  damage: 10
+  fireRate: 2.2
+  placePoint: {fileID: 0}
+  price: 220
+  buildingMesh: {fileID: 4300000, guid: 55e7e671a36fffb48b4218ed49b70d0b, type: 3}
+  readyMesh: {fileID: 4300000, guid: 00508f8ccaa61a54890e091bece3fbf0, type: 3}
+  buildVFX: {fileID: 5349529255792655070}
+  upgradedTower: {fileID: 0}
+  extraUpgradeTower: {fileID: 0}
+  archer1: {fileID: 217387974176303801}
+  archer2: {fileID: 7443253081748716928}
 --- !u!1 &8392856303847091995
 GameObject:
   m_ObjectHideFlags: 0

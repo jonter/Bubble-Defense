@@ -45,5 +45,15 @@ public class EnemyHealth : MonoBehaviour
         healthBar.gameObject.SetActive(false);
     }
 
+    public void IncreaseHP(float mult)
+    {
+        hp *= mult;
+        maxHp = hp;
+    }
+
+    public void IncreaseCoins(float mult)
+    {
+        coinsForKill = (int)(coinsForKill * mult);
+    }
     
 }
