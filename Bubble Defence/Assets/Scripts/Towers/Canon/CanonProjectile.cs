@@ -42,7 +42,7 @@ public class CanonProjectile : MonoBehaviour
         {
             float dist = 
                 Vector3.Distance(enemy.transform.position, transform.position);
-            if (dist <= radius) enemy.GetDamage(damage);
+            if (dist <= radius) enemy.GetDamage(damage, DamageType.FIRE);
         }
 
     }

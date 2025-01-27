@@ -57,7 +57,7 @@ public class MagicTower : Tower
     protected virtual IEnumerator ShootCoroutine()
     {
         reloaded = false;
-        target.GetDamage(damage);
+        target.GetDamage(damage, DamageType.MAGIC);
         target.GetComponent<EnemyLogic>().Slow(slowness, slowDuration);
         StartCoroutine(ShowEffectCoroutine());
         yield return new WaitForSeconds(1 / fireRate);

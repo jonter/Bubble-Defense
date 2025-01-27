@@ -1816,6 +1816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   distanceGone: 0
+  damage: 10
 --- !u!114 &8017544160993435390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,6 +1832,9 @@ MonoBehaviour:
   hp: 20
   coinsForKill: 3
   healthBar: {fileID: 862113079520814986}
+  physicResist: 0
+  magicResist: 0
+  fireResist: 0.5
 --- !u!1 &8588502578202768656
 GameObject:
   m_ObjectHideFlags: 0

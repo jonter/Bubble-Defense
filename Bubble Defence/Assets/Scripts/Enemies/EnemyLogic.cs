@@ -11,7 +11,7 @@ public class EnemyLogic : MonoBehaviour
     [HideInInspector] public float distanceGone = 0;
     [SerializeField] float damage = 10;
 
-    public void Slow(float slowness, float duration)
+    public virtual void Slow(float slowness, float duration)
     {
         StartCoroutine(SlowCoroutine(slowness, duration));
     }

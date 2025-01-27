@@ -35,6 +35,7 @@ public class ArcherTower4B : Tower
         GameObject newArrow = Instantiate(arrowPrefab, 
             shootPoint.position, Quaternion.identity);
         Arrow a = newArrow.GetComponent<Arrow>();
+        a.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
         
         a.Launch(eh, damage);
     }

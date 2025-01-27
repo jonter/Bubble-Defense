@@ -23,7 +23,7 @@ public class MagicTower4B : MagicTower
         foreach(EnemyLogic e in enemies)
         {
             e.Slow(slowness, slowDuration);
-            e.GetComponent<EnemyHealth>().GetDamage(damage);
+            e.GetComponent<EnemyHealth>().GetDamage(damage, DamageType.MAGIC);
             DrawShootLine(e, pointIndex);
             pointIndex += 2;
         }

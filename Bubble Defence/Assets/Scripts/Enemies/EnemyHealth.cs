@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum DamageType
+{
+    PHYSIC,
+    MAGIC,
+    FIRE
+}
+
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hp = 20;
@@ -15,9 +23,17 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] Slider healthBar;
 
-    public void GetDamage(float damage)
+    [Header("Защита от типов урона")]
+    [SerializeField][Range(0, 1)] float physicResist = 0;
+    [SerializeField][Range(0, 1)] float magicResist = 0;
+    [SerializeField][Range(0, 1)] float fireResist = 0;
+
+    public virtual void GetDamage(float damage, DamageType damagetype = DamageType.PHYSIC)
     {
         if (alive == false) return;
+        if (damagetype == DamageType.PHYSIC) damage = damage * (1 - physicResist);
+        else if (damagetype == DamageType.MAGIC) damage = damage * (1 - magicResist);
+        else if (damagetype == DamageType.FIRE) damage = damage * (1 - fireResist);
         hp -= damage; 
         healthBar.gameObject.SetActive(true);
         healthBar.value = hp / maxHp;
@@ -26,6 +42,8 @@ public class EnemyHealth : MonoBehaviour
             Death();
         }
     }
+
+
 
     void Death()
     {
