@@ -6,12 +6,12 @@ using UnityEngine;
 public class Archer : MonoBehaviour
 {
     Arrow currentArrow;
-    [SerializeField] GameObject arrowPrefab;
     Vector3 startPos;
     Quaternion startRot;
     Vector3 startScale;
 
     bool isReloaded = true;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -40,11 +40,12 @@ public class Archer : MonoBehaviour
     {
         isReloaded = false;
         yield return new WaitForSeconds(reloadTime);
-        GameObject newArrow = Instantiate(arrowPrefab, transform);
+        Arrow newArrow = ArrowPool.instance.Get();
+        newArrow.transform.parent = transform;
         newArrow.transform.localPosition = startPos;
         newArrow.transform.localRotation = startRot;
         newArrow.transform.localScale = startScale;
-        currentArrow = newArrow.GetComponent<Arrow>();
+        currentArrow = newArrow;
         isReloaded = true;
     }
     

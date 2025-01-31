@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] int coinsForKill = 3;
 
+    public static List<EnemyHealth> AliveEnemies;
+
     public bool GetAlive() { return alive; }
 
     [SerializeField] Slider healthBar;
@@ -47,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        AliveEnemies.Remove(this);
         GameCoins.AddCoins(coinsForKill);
         alive = false;
         healthBar.gameObject.SetActive(false);
@@ -59,6 +62,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AliveEnemies.Add(this);
         maxHp = hp;
         healthBar.gameObject.SetActive(false);
     }

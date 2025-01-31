@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EnemyHealth.AliveEnemies = new List<EnemyHealth>();
         display = FindAnyObjectByType<WaveDisplay>();
         Spawning = false;
         pathfinder = FindAnyObjectByType<Pathfinder>();
@@ -51,12 +52,11 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator WaitBeforeNewWave()
     {
-        EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
-        while(enemies.Length > 0)
+        while(EnemyHealth.AliveEnemies.Count > 0)
         {
             yield return new WaitForSeconds(1);
-            enemies = FindObjectsOfType<EnemyHealth>();
         }
+
         Spawning = false;
         if(waveNum >= waves.Length)
         {

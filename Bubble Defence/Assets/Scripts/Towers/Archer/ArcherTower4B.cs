@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ArcherTower4B : Tower
 {
-    [SerializeField] GameObject arrowPrefab;
     bool reloaded = true;
     [SerializeField] Transform shootPoint;
 
@@ -19,8 +18,8 @@ public class ArcherTower4B : Tower
     IEnumerator MassiveShoot()
     {
         reloaded = false;
-        List<EnemyLogic> enemies = FindEnemiesInRadius();
-        foreach(EnemyLogic e in enemies)
+        List<EnemyHealth> enemies = FindEnemiesInRadius();
+        foreach(EnemyHealth e in enemies)
         {
             Shoot(e);
         }
@@ -28,16 +27,15 @@ public class ArcherTower4B : Tower
         reloaded = true;
     }
 
-    void Shoot(EnemyLogic enemy)
+    void Shoot(EnemyHealth enemy)
     {
-        EnemyHealth eh = enemy.GetComponent<EnemyHealth>();
-        if (eh.GetAlive() == false) return;
-        GameObject newArrow = Instantiate(arrowPrefab, 
-            shootPoint.position, Quaternion.identity);
-        Arrow a = newArrow.GetComponent<Arrow>();
-        a.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
         
-        a.Launch(eh, damage);
+        if (enemy.GetAlive() == false) return;
+        Arrow newArrow = ArrowPool.instance.Get();
+        newArrow.transform.position = shootPoint.position;
+        
+        newArrow.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
+        newArrow.Launch(enemy, damage);
     }
 
 }

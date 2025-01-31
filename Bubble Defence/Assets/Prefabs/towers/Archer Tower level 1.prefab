@@ -109,6 +109,7 @@ MonoBehaviour:
   buildVFX: {fileID: 5349529255792655070}
   upgradedTower: {fileID: 7560601795582705564, guid: ec7b45311090ae34d9052f3e6ad50ccb,
     type: 3}
+  extraUpgradeTower: {fileID: 0}
 --- !u!65 &2279088081700489506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,8 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b039ad7bd27e1f4187f5a7e7088347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 8680679480224923179, guid: 6a83d59251c097742af04fd44c108dbb,
-    type: 3}
 --- !u!1001 &150481068806378170
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -90,12 +90,12 @@ public class Tower : MonoBehaviour
 
     
 
-    protected List<EnemyLogic> FindEnemiesInRadius()
+    protected List<EnemyHealth> FindEnemiesInRadius()
     {
-        EnemyLogic[] enemies = FindObjectsOfType<EnemyLogic>();
-        List<EnemyLogic> enemiesInRadius = new List<EnemyLogic>();
+        
+        List<EnemyHealth> enemiesInRadius = new List<EnemyHealth>();
 
-        foreach(EnemyLogic en in enemies)
+        foreach(EnemyHealth en in EnemyHealth.AliveEnemies)
         {
             float distance = Vector3.Distance(transform.position, en.transform.position);
             if(distance < attackRadius)
@@ -109,24 +109,22 @@ public class Tower : MonoBehaviour
 
     protected EnemyHealth FindTargetToShoot()
     {
-        List<EnemyLogic> enemies = FindEnemiesInRadius();
+        List<EnemyHealth> enemies = FindEnemiesInRadius();
         if (enemies.Count == 0) return null;
 
-        EnemyLogic target = null;
+        EnemyHealth target = null;
         float max = 0;
         for(int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i].GetComponent<EnemyHealth>().GetAlive() == false)
-                continue;
-            if (enemies[i].distanceGone > max)
+            EnemyLogic el = enemies[i].GetComponent<EnemyLogic>();
+            if (el.distanceGone > max)
             {
                 target = enemies[i];
-                max = enemies[i].distanceGone;
+                max = el.distanceGone;
             }
         }
-
         if (target == null) return null;
-        return target.GetComponent<EnemyHealth>();
+        return target;
     }
 
 

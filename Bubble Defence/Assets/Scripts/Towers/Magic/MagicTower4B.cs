@@ -16,14 +16,14 @@ public class MagicTower4B : MagicTower
 
     IEnumerator MassiveShoot()
     {
-        List<EnemyLogic> enemies = FindEnemiesInRadius();
+        List<EnemyHealth> enemies = FindEnemiesInRadius();
         shootLine.positionCount = enemies.Count * 2;
         int pointIndex = 0;
         shootLine.enabled = true;
-        foreach(EnemyLogic e in enemies)
+        foreach(EnemyHealth e in enemies)
         {
-            e.Slow(slowness, slowDuration);
-            e.GetComponent<EnemyHealth>().GetDamage(damage, DamageType.MAGIC);
+            e.GetComponent<EnemyLogic>().Slow(slowness, slowDuration);
+            e.GetDamage(damage, DamageType.MAGIC);
             DrawShootLine(e, pointIndex);
             pointIndex += 2;
         }
@@ -32,7 +32,7 @@ public class MagicTower4B : MagicTower
         shootLine.enabled = false;
     }
 
-    void DrawShootLine(EnemyLogic enemy, int index)
+    void DrawShootLine(EnemyHealth enemy, int index)
     {
         
         shootLine.SetPosition(index, topCrystal.transform.position);

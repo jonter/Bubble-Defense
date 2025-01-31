@@ -27,7 +27,7 @@ public class Arrow : MonoBehaviour
             yield return null;
         }
         enemy.GetDamage(damage);
-        Destroy(gameObject);
+        ArrowPool.instance.Return(this);
     }
 
 
