@@ -39,9 +39,9 @@ public class BuildButtons : MonoBehaviour
         
         Vector3 pos = point.transform.position + new Vector3(0, 0.5f, 0);
         Vector3 canvasPos = Camera.main.WorldToScreenPoint(pos);
+        StartCoroutine(ShowButtonsCoroutine());
         if (Show == false)
         {
-            StartCoroutine(ShowButtonsCoroutine());
             transform.position = canvasPos;
         }
         else

@@ -105,7 +105,7 @@ MonoBehaviour:
   damage: 4
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 70
+  price: 90
   buildingMesh: {fileID: 4300000, guid: 602854b273226184ab6435f33cd67373, type: 3}
   readyMesh: {fileID: 4300000, guid: 2bc0dcbde9d106840bcdedaa3c8189ca, type: 3}
   buildVFX: {fileID: 7457686407550095889}

@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2
-  damage: 2
+  damage: 4
   fireRate: 1
   placePoint: {fileID: 0}
   price: 200

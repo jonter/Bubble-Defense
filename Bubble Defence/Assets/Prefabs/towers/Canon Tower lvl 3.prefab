@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2.3
-  damage: 40
+  damage: 30
   fireRate: 1
   placePoint: {fileID: 0}
-  price: 150
+  price: 160
   buildingMesh: {fileID: 4300000, guid: c27b8f79ee0d5a042b6096cf36bf371f, type: 3}
   readyMesh: {fileID: 4300000, guid: 257f854f145db2b4ebe40ddfa20f5024, type: 3}
   buildVFX: {fileID: 8447511105964324313}

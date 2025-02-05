@@ -101,11 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2051d1fc512228f498f7856fbc45566d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 2.2
+  attackRadius: 2.4
   damage: 5
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 160
+  price: 180
   buildingMesh: {fileID: 4300000, guid: c5ddf8c5ef1825f4194f804874982330, type: 3}
   readyMesh: {fileID: 4300000, guid: 8e2a23ab44bdd874ab659cd16dc31e1b, type: 3}
   buildVFX: {fileID: 7457686407550095889}

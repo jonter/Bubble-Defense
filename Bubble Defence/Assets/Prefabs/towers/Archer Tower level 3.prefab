@@ -103,7 +103,7 @@ MonoBehaviour:
   damage: 10
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 80
+  price: 75
   buildingMesh: {fileID: 4300000, guid: 9f6f07a475fa44345b665fc56302aa27, type: 3}
   readyMesh: {fileID: 4300000, guid: bc4bf5978b0527b488b736a0812f1a0d, type: 3}
   buildVFX: {fileID: 5349529255792655070}
@@ -178,8 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b039ad7bd27e1f4187f5a7e7088347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 8680679480224923179, guid: 6a83d59251c097742af04fd44c108dbb,
-    type: 3}
 --- !u!1001 &150481068806378170
 PrefabInstance:
   m_ObjectHideFlags: 0

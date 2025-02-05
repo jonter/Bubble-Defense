@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerUpgrade : MonoBehaviour
@@ -9,6 +8,7 @@ public class TowerUpgrade : MonoBehaviour
     Tower selectedTower;
 
     public static TowerUpgrade instance;
+    [SerializeField] GameObject radiusSphere;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +25,7 @@ public class TowerUpgrade : MonoBehaviour
             return;
         }
         selectedTower = t;
+        ShowAttackRadius(t);
         if(t.upgradedTower == null)
         {
             int sellPrice = t.price;
@@ -45,10 +46,19 @@ public class TowerUpgrade : MonoBehaviour
         }
     }
 
+    void ShowAttackRadius(Tower t)
+    {
+        float attackRaduis = t.GetRadius();
+        radiusSphere.transform.localScale = Vector3.one * attackRaduis * 2;
+        radiusSphere.transform.position = t.transform.position + Vector3.down;
+        radiusSphere.SetActive(true);
+    }
+
     public void Deselect()
     {
         selectedTower = null;
         upgradeButtons.HideButtons();
+        radiusSphere.SetActive(false);
     }
 
     public void Upgrade()
@@ -62,9 +72,8 @@ public class TowerUpgrade : MonoBehaviour
         else
         {
             selectedTower.Upgrade();
-            selectedTower = null;
         }
-        upgradeButtons.HideButtons();
+        Deselect();
     }
 
     public void ExtraUpgrade()
@@ -78,17 +87,15 @@ public class TowerUpgrade : MonoBehaviour
         else
         {
             selectedTower.ExtraUpgrade();
-            selectedTower = null;
         }
-        upgradeButtons.HideButtons();
+        Deselect();
     }
 
     public void Sell()
     {
         if (selectedTower == null) return;
         selectedTower.SellTower();
-        upgradeButtons.HideButtons();
-        selectedTower = null;
+        Deselect();
     }
 
     

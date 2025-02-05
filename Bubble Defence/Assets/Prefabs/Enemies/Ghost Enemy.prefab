@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
-  coinsForKill: 5
+  coinsForKill: 7
   healthBar: {fileID: 3730964988355798495}
   physicResist: 0.9
   magicResist: 0

@@ -4932,7 +4932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b45c333dd586240b83eebd214a6461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyTime: 1
+  flyTime: 0.8
   height: 2.4
 --- !u!1 &4266228194830866575
 GameObject:

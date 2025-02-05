@@ -30,8 +30,8 @@ public class EditorCube : MonoBehaviour
 
         string s = $"[{roundX},{roundZ}]";
         name = "Cube " + s;
-        TMP_Text mytext = GetComponentInChildren<TMP_Text>();
-        mytext.text = s;
+        //TMP_Text mytext = GetComponentInChildren<TMP_Text>();
+        //mytext.text = s;
     }
 
 

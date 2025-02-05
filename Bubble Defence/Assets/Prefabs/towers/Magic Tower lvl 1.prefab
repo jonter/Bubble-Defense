@@ -105,12 +105,13 @@ MonoBehaviour:
   damage: 1
   fireRate: 2
   placePoint: {fileID: 0}
-  price: 8
+  price: 12
   buildingMesh: {fileID: 4300000, guid: cc94f9856b628754783652821acd1821, type: 3}
   readyMesh: {fileID: 4300000, guid: 2efb54d094d718741936869262b2ab69, type: 3}
   buildVFX: {fileID: 7457686407550095889}
   upgradedTower: {fileID: 3467071086610191683, guid: 60d6f724dffdf4b48abe8a38d42860ad,
     type: 3}
+  extraUpgradeTower: {fileID: 0}
   topCrystal: {fileID: 3440927816283844012}
   frostVFX: {fileID: 2254537936824190953}
   slowness: 1.5

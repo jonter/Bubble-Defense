@@ -25,6 +25,9 @@ public class Tower : MonoBehaviour
     [Tooltip("Вставить сюда еще башню, если мы можем прокачаться в другой тип башен")]
     public Tower extraUpgradeTower;
 
+
+    public float GetRadius() => attackRadius; 
+
     protected virtual IEnumerator Start()
     {
         filter = GetComponent<MeshFilter>();

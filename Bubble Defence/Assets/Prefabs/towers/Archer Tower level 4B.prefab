@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f92e8189a92714783ae5fd000009c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 2
+  attackRadius: 2.2
   damage: 10
   fireRate: 2
   placePoint: {fileID: 0}
@@ -161,8 +161,6 @@ MonoBehaviour:
   buildVFX: {fileID: 5349529255792655070}
   upgradedTower: {fileID: 0}
   extraUpgradeTower: {fileID: 0}
-  arrowPrefab: {fileID: 8680679480224923179, guid: 6a83d59251c097742af04fd44c108dbb,
-    type: 3}
   shootPoint: {fileID: 6053059723913379137}
 --- !u!1001 &150481068806378170
 PrefabInstance:

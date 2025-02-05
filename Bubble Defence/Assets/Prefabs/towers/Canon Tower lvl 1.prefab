@@ -100,15 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2
-  damage: 8
+  damage: 5
   fireRate: 1
   placePoint: {fileID: 0}
-  price: 25
+  price: 20
   buildingMesh: {fileID: 4300000, guid: 989701b84dfce9c4da39a33a9f9a4437, type: 3}
   readyMesh: {fileID: 4300004, guid: be1108ed848814640ad1a5b7b8fa80ea, type: 3}
   buildVFX: {fileID: 8447511105964324313}
   upgradedTower: {fileID: 6881559424618881658, guid: e3f2adee7b71b1e4591fbff774e68695,
     type: 3}
+  extraUpgradeTower: {fileID: 0}
   topPart: {fileID: 4235210739505419775}
   projectilePrefab: {fileID: 3384501621607475420, guid: dd771c0a3718edc4a9b379f0ef814b57,
     type: 3}
